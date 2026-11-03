@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+   <nav class="navbar">
+
+    <div class="logo">
+        🎓 Student Management System
+    </div>
+
+    <div class="nav-links">
+
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="students.php">Students</a>
+
+        <a href="marks.php">Marks</a>
+
+        <a href="attendance.php">Attendance</a>
+
+        <a href="profile.html" class="active">Profile</a>
+
+        <a href="login.php">Logout</a>
+
+    </div>
+
+</nav>
+
+
+    <!-- Profile Section -->
+    <section class="profile-page">
+
+        <h1>My Profile</h1>
+
+        <p class="profile-subtitle">
+            View and manage your profile information
+        </p>
+
+
+        <div class="profile-card">
+
+            <!-- Profile Icon -->
+            <div class="profile-icon">
+                👤
+            </div>
+
+            <h2 id="profileName">Admin</h2>
+
+            <p class="profile-role">
+                Administrator
+            </p>
+
+
+            <div class="profile-details">
+
+                <div class="profile-item">
+                    <strong>Full Name</strong>
+                    <span id="nameText">Admin User</span>
+
+                    <input type="text"
+                           id="nameInput"
+                           value="Admin User"
+                           style="display:none;">
+                </div>
+
+
+                <div class="profile-item">
+                    <strong>Email</strong>
+                    <span id="emailText">admin@gmail.com</span>
+
+                    <input type="email"
+                           id="emailInput"
+                           value="admin@gmail.com"
+                           style="display:none;">
+                </div>
+
+
+                <div class="profile-item">
+                    <strong>Role</strong>
+                    <span>Administrator</span>
+                </div>
+
+
+                <div class="profile-item">
+                    <strong>Department</strong>
+                    <span id="departmentText">
+                        Master of Computer Applications
+                    </span>
+
+                    <input type="text"
+                           id="departmentInput"
+                           value="Master of Computer Applications"
+                           style="display:none;">
+                </div>
+
+
+                <div class="profile-item">
+                    <strong>Phone</strong>
+                    <span id="phoneText">9876543210</span>
+
+                    <input type="text"
+                           id="phoneInput"
+                           value="9876543210"
+                           style="display:none;">
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <button class="edit-profile-btn"
+                    id="editButton"
+                    onclick="editProfile()">
+                Edit Profile
+            </button>
+
+
+            <button class="save-profile-btn"
+                    id="saveButton"
+                    onclick="saveProfile()"
+                    style="display:none;">
+                Save Changes
+            </button>
+
+
+            <button class="cancel-profile-btn"
+                    id="cancelButton"
+                    onclick="cancelEdit()"
+                    style="display:none;">
+                Cancel
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        // Edit Profile
+        function editProfile() {
+
+            document.getElementById("nameText").style.display = "none";
+            document.getElementById("emailText").style.display = "none";
+            document.getElementById("departmentText").style.display = "none";
+            document.getElementById("phoneText").style.display = "none";
+
+
+            document.getElementById("nameInput").style.display = "block";
+            document.getElementById("emailInput").style.display = "block";
+            document.getElementById("departmentInput").style.display = "block";
+            document.getElementById("phoneInput").style.display = "block";
+
+
+            document.getElementById("editButton").style.display = "none";
+
+            document.getElementById("saveButton").style.display = "inline-block";
+
+            document.getElementById("cancelButton").style.display = "inline-block";
+        }
+
+
+        // Save Profile
+        function saveProfile() {
+
+            let name = document.getElementById("nameInput").value;
+            let email = document.getElementById("emailInput").value;
+            let department = document.getElementById("departmentInput").value;
+            let phone = document.getElementById("phoneInput").value;
+
+
+            if (name === "" || email === "" || department === "" || phone === "") {
+
+                alert("Please fill all fields!");
+                return;
+            }
+
+
+            document.getElementById("nameText").textContent = name;
+            document.getElementById("emailText").textContent = email;
+            document.getElementById("departmentText").textContent = department;
+            document.getElementById("phoneText").textContent = phone;
+
+
+            document.getElementById("profileName").textContent = name;
+
+
+            document.getElementById("nameText").style.display = "inline";
+            document.getElementById("emailText").style.display = "inline";
+            document.getElementById("departmentText").style.display = "inline";
+            document.getElementById("phoneText").style.display = "inline";
+
+
+            document.getElementById("nameInput").style.display = "none";
+            document.getElementById("emailInput").style.display = "none";
+            document.getElementById("departmentInput").style.display = "none";
+            document.getElementById("phoneInput").style.display = "none";
+
+
+            document.getElementById("editButton").style.display = "inline-block";
+
+            document.getElementById("saveButton").style.display = "none";
+
+            document.getElementById("cancelButton").style.display = "none";
+
+
+            alert("Profile Updated Successfully!");
+        }
+
+
+        // Cancel Edit
+        function cancelEdit() {
+
+            document.getElementById("nameInput").value =
+                document.getElementById("nameText").textContent;
+
+            document.getElementById("emailInput").value =
+                document.getElementById("emailText").textContent;
+
+            document.getElementById("departmentInput").value =
+                document.getElementById("departmentText").textContent;
+
+            document.getElementById("phoneInput").value =
+                document.getElementById("phoneText").textContent;
+
+
+            document.getElementById("nameText").style.display = "inline";
+            document.getElementById("emailText").style.display = "inline";
+            document.getElementById("departmentText").style.display = "inline";
+            document.getElementById("phoneText").style.display = "inline";
+
+
+            document.getElementById("nameInput").style.display = "none";
+            document.getElementById("emailInput").style.display = "none";
+            document.getElementById("departmentInput").style.display = "none";
+            document.getElementById("phoneInput").style.display = "none";
+
+
+            document.getElementById("editButton").style.display = "inline-block";
+
+            document.getElementById("saveButton").style.display = "none";
+
+            document.getElementById("cancelButton").style.display = "none";
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Students - Student Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🎓 Student Management
+    </div>
+
+    <div class="nav-links">
+
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="students.html">Students</a>
+
+        <a href="marks.html">Marks</a>
+
+        <a href="attendance.html">Attendance</a>
+
+        <a href="profile.html">Profile</a>
+
+        <a href="index.html" class="logout-btn">
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- Students Section -->
+
+<section class="students-page">
+
+    <h1>Student Management 👨‍🎓</h1>
+
+    <p class="students-subtitle">
+        Add and manage student information
+    </p>
+
+
+    <!-- Add Student Form -->
+
+    <div class="student-form-card">
+
+        <h2>➕ Add New Student</h2>
+
+        <form id="studentForm">
+
+            <div class="form-row">
+
+                <div class="input-group">
+
+                    <label>Student Name</label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter student name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Roll Number</label>
+
+                    <input
+                        type="text"
+                        id="rollNumber"
+                        placeholder="Enter roll number"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="input-group">
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="studentEmail"
+                        placeholder="Enter email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Phone Number</label>
+
+                    <input
+                        type="tel"
+                        id="studentPhone"
+                        placeholder="Enter phone number"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="input-group">
+
+                    <label>Course</label>
+
+                    <select id="studentCourse" required>
+
+                        <option value="">
+                            Select Course
+                        </option>
+
+                        <option value="B.Tech CSE">
+                            B.Tech CSE
+                        </option>
+
+                        <option value="B.Tech ECE">
+                            B.Tech ECE
+                        </option>
+
+                        <option value="B.Tech EEE">
+                            B.Tech EEE
+                        </option>
+
+                        <option value="B.Tech MECH">
+                            B.Tech MECH
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Year</label>
+
+                    <select id="studentYear" required>
+
+                        <option value="">
+                            Select Year
+                        </option>
+
+                        <option value="1st Year">
+                            1st Year
+                        </option>
+
+                        <option value="2nd Year">
+                            2nd Year
+                        </option>
+
+                        <option value="3rd Year">
+                            3rd Year
+                        </option>
+
+                        <option value="4th Year">
+                            4th Year
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="add-student-btn">
+                Add Student
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Student List -->
+
+    <div class="student-list-card">
+
+        <div class="student-list-header">
+
+            <h2>📋 Student List</h2>
+
+            <input
+                type="text"
+                id="searchStudent"
+                placeholder="🔍 Search student..."
+            >
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Roll No</th>
+
+                        <th>Name</th>
+
+                        <th>Email</th>
+
+                        <th>Phone</th>
+
+                        <th>Course</th>
+
+                        <th>Year</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="studentTableBody">
+
+                    <tr>
+
+                        <td>101</td>
+
+                        <td>Rani</td>
+
+                        <td>rani@gmail.com</td>
+
+                        <td>9876543210</td>
+
+                        <td>B.Tech CSE</td>
+
+                        <td>3rd Year</td>
+
+                        <td>
+
+                            <button class="edit-btn">
+                                Edit
+                            </button>
+
+                            <button class="delete-btn">
+                                Delete
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>102</td>
+
+                        <td>Priya</td>
+
+                        <td>priya@gmail.com</td>
+
+                        <td>9876543211</td>
+
+                        <td>B.Tech CSE</td>
+
+                        <td>2nd Year</td>
+
+                        <td>
+
+                            <button class="edit-btn">
+                                Edit
+                            </button>
+
+                            <button class="delete-btn">
+                                Delete
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 Student Management System
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
